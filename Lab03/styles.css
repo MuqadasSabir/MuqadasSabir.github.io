@@ -1,0 +1,33 @@
+body {
+    background-color:rgb(32, 189, 174);
+ 
+}
+h1{
+    color:rgb(21, 41, 60);
+}
+.one{
+    color:rgb(76, 163, 36);
+}
+a[href]{
+    color:blue;
+}
+p::first-line {
+color:rgb(182, 24, 24);
+}
+#one  {
+color:rgb(228, 7, 7);
+}
+p::first-letter{
+    font-size:2em;
+}
+h2:hover{
+    background-color:rgb(42, 141, 35);
+    color:yellow;
+}
+ ol li{
+    color:rgb(12, 40, 37);
+    background-color:rgb(21, 155, 223);
+}
+a[href^="mailto"]{
+    color:rgb(89, 26, 75);
+}
