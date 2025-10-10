@@ -1,0 +1,175 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #9be1e3, #1abc9c);
+    color: #222;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+
+.profile-card {
+    text-align: center;
+    background-color: #eaf8f7;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.profile-card img {
+    width: 150px;
+    border-radius: 50%;
+    border: 4px solid #1abc9c;
+    margin-bottom: 10px;
+}
+
+.profile-card h1 {
+    margin: 10px 0 5px 0;
+    color: #153b60;
+    text-transform: uppercase;
+}
+
+.profile-card .tagline {
+    color: #0a5857;
+    font-size: 15px;
+}
+
+
+.profile-links a {
+    display: inline-block;
+    background-color: #1abc9c;
+    color: #fff;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.profile-links a:hover {
+    background-color: #0e6655;
+}
+
+
+p {
+    font-size: 17px;
+    text-align: justify;
+}
+
+p::first-letter {
+    font-size: 1.8em;
+    color: rgb(201, 36, 36);
+}
+
+p::first-line {
+    color: rgb(26, 54, 114);
+}
+
+
+#one {
+    color: crimson;
+    font-weight: bold;
+}
+
+.two {
+    color: rgb(42, 103, 51);
+}
+
+
+h2 {
+    border-left: 5px solid #1abc9c;
+    padding-left: 10px;
+    color: #1a3d4c;
+    transition: 0.3s;
+}
+
+h2:hover {
+    background-color: #1abc9c;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+ol li, ul li {
+    background-color: #eaf8f7;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+
+.overflow-box {
+    width: 100%;
+    height: 100px;
+    overflow: auto;
+    background: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+
+section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #e67e22;
+}
+
+a[href^="mailto"] {
+    color: #6a0dad;
+}
+
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #153b60;
+    color: white;
+    border-radius: 0 0 15px 15px;
+}
+
+
+@media (max-width: 600px) {
+    body {
+        background: linear-gradient(135deg, #b6e7f1, #16a085);
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+   .profile-card img {
+    border-radius: 0; 
+}
+
+ h1 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
