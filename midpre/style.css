@@ -1,0 +1,154 @@
+p::first-letter{
+    font-weight:bold;
+
+}
+nav ul{
+    display:flex;
+   
+     list-style:none;
+  align-items: center;
+    justify-content:center;
+    gap:20px;
+}
+nav{
+    background-color: aqua;
+    border:solid 1px black;
+     border-radius: 10px;
+     
+     
+}
+.profile-links{
+    display: flex;
+   justify-content: center;
+    margin:40px;
+gap:20px;
+
+}
+
+#over {
+    width:150px;
+    height:200px;
+    overflow:scroll;
+    border:solid 1px black;
+    background-color: antiquewhite;
+
+
+}
+.cards{
+    display:flex;
+    justify-content:space-between;
+    border:1px solid black;
+    margin:20px;
+    padding:5px;
+    background-color: bisque;
+}
+.product{
+   border-collapse: collapse;
+border:solid 1px black;
+background-color:white;
+padding:40px;
+margin:20px;
+border-spacing:1px ;
+}
+.first th {
+    border:solid 1px black;
+    margin:20px;
+    padding:40px;
+    color: red;
+}
+.second td{
+    border:solid 1px black;
+     margin:20px;
+    padding:40px;
+     color: red;
+}
+.third td{
+    border:solid 1px black;
+     margin:20px;
+     padding:40px;
+      color: red;
+}
+.fourth td{
+    border:solid 1px black;
+     margin:20px;
+     padding:40px;
+      color: red;
+}
+tbody tr:nth-child(even){
+    background-color:aquamarine;
+
+}
+tbody tr:nth-child(odd){
+    background-color:aqua;
+
+}
+button{
+    background-color: rgba(20, 124, 135, 0.491);
+    color: white;
+    border-radius:10px;
+}
+.for{
+   display: block;
+   justify-content: center;
+    background-color: antiquewhite;
+    padding:20px;
+    margin:10px;
+
+}
+.sr{
+    color: darkgrey;
+    border-radius:10px;
+    padding:20px;
+   
+}
+.all{
+    display:grid;
+   grid-template-columns:repeat(3,1fr);
+     grid-template-rows:auto;
+     border:1px solid black;
+     gap:20px;
+    padding:30px;
+   
+    
+   
+}
+.two{
+    display:grid;
+   grid-template-columns:repeat(3,1fr);
+     grid-template-rows:auto;
+     border:1px solid black;
+     gap:20px;
+    padding:30px;
+   
+    
+   
+}
+
+
+@media(max-width:1024px){
+    .all,.two{
+        grid-template-columns: repeat(4,1fr);
+
+    }
+}
+@media(max-width:768px){
+    .all,.two{
+        grid-template-columns: repeat(3,1fr);
+
+    }
+}
+@media(max-width:480px){
+    .all,.two{
+        grid-template-columns:repeat(2,1fr);
+
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}

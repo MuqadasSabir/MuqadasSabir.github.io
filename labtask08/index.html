@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lazy Loading Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Lazy Loading — Figma Screens Demo</h1>
+    <p class="hint">Only the first screenshot loads immediately. Others load when you scroll to them.</p>
+  </header>
+
+  <main class="gallery">
+    <!-- First image loads immediately -->
+    <figure class="screen-wrap">
+      <img src="img1.jpg" alt="Screen 1" class="screen loaded" />
+      <figcaption>Screen 1 (default)</figcaption>
+    </figure>
+
+    <!-- Remaining images lazy-loaded -->
+    <figure class="screen-wrap">
+      <img data-src="img2.jpg" src="img1.jpg" alt="Screen 2" class="screen lazy" />
+      <figcaption>Screen 2</figcaption>
+    </figure>
+
+    <figure class="screen-wrap">
+      <img data-src="img3.jpg" src="img1.jpg" alt="Screen 3" class="screen lazy" />
+      <figcaption>Screen 3</figcaption>
+    </figure>
+
+    <figure class="screen-wrap">
+      <img data-src="img4.jpg" src="img1.jpg" alt="Screen 4" class="screen lazy" />
+      <figcaption>Screen 4</figcaption>
+    </figure>
+
+    <figure class="screen-wrap">
+      <img data-src="img5.jpg" src="img1.jpg" alt="Screen 5" class="screen lazy" />
+      <figcaption>Screen 5</figcaption>
+    </figure>
+
+    <figure class="screen-wrap">
+      <img data-src="img6.jpg" src="img1.jpg" alt="Screen 6" class="screen lazy" />
+      <figcaption>Screen 6</figcaption>
+    </figure>
+
+    <figure class="screen-wrap">
+      <img data-src="img7.jpg" src="img1.jpg" alt="Screen 7" class="screen lazy" />
+      <figcaption>Screen 7</figcaption>
+    </figure>
+
+    <figure class="screen-wrap">
+      <img data-src="img8.jpg" src="img1.jpg" alt="Screen 8" class="screen lazy" />
+      <figcaption>Screen 8</figcaption>
+    </figure>
+
+  </main>
+
+  <script src="script.js"></script>
+
+  <noscript>
+    <style>
+      .lazy { display: none; }
+      .screen-wrap img { display: block; }
+    </style>
+    <p style="text-align:center; color:#b00;">
+      JavaScript off: lazy loading won't work. Enable JS to see lazy loading behavior.
+    </p>
+  </noscript>
+</body>
+</html>
