@@ -1,26 +1,53 @@
-
+require("dotenv").config();
 const express = require("express");
-const fs = require("fs");
+const mongoose = require("mongoose");
 
 const app = express();
-const PORT = 3000;
-
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
+/* =========================
+   MongoDB Connection
+========================= */
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.log("MongoDB error:", err));
 
-app.get("/people", (req, res) => {
-  let data = fs.readFileSync("people.json"); 
-  let people = JSON.parse(data); 
-  res.send(people); 
+/* =========================
+   Schema & Model
+   (people.json ke mutabiq)
+========================= */
+const personSchema = new mongoose.Schema({
+  id: String,
+  name: String,
+  email: String,
+  phone: String,
+  company: String,
+  country: String,
+  purpose: String
 });
 
+const Person = mongoose.model("Person", personSchema);
 
-app.get("/person/:id", (req, res) => {
-  let data = fs.readFileSync("people.json");
-  let people = JSON.parse(data);
+/* =========================
+   Routes
+========================= */
 
-  let person = people.find(p => p.id === req.params.id);
+// Test route
+app.get("/", (req, res) => {
+  res.send("Node API is running successfully");
+});
+
+// GET all people
+app.get("/people", async (req, res) => {
+  const people = await Person.find();
+  res.send(people);
+});
+
+// GET single person by id
+app.get("/person/:id", async (req, res) => {
+  const person = await Person.findOne({ id: req.params.id });
 
   if (!person) {
     return res.status(404).send({ message: "Person not found" });
@@ -29,20 +56,18 @@ app.get("/person/:id", (req, res) => {
   res.send(person);
 });
 
-
-app.post("/person", (req, res) => {
-  let data = fs.readFileSync("people.json");
-  let people = JSON.parse(data);
-
-  let newPerson = req.body; 
-  people.push(newPerson); 
-
-  fs.writeFileSync("people.json", JSON.stringify(people, null, 2)); 
-
-  res.status(201).send({ message: "New person added", person: newPerson });
+// POST new person
+app.post("/person", async (req, res) => {
+  const newPerson = await Person.create(req.body);
+  res.status(201).send({
+    message: "New person added",
+    person: newPerson
+  });
 });
 
-
+/* =========================
+   Start Server
+========================= */
 app.listen(PORT, () => {
   console.log("Server chal raha hai on http://localhost:" + PORT);
 });
